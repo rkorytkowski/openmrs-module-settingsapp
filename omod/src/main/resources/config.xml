@@ -25,6 +25,10 @@
 				
 	</mappingFiles>
 
+	<require_modules>
+		<require_module version="2.0">org.openmrs.module.webservices.rest</require_module>
+	</require_modules>
+
 	<!-- Internationalization -->
 	<!-- All message codes should start with ${project.parent.artifactId}. -->
 	<messages>
