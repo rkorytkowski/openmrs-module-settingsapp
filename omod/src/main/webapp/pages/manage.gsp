@@ -2,6 +2,7 @@
     ui.decorateWith("appui", "standardEmrPage")
     ui.includeJavascript("uicommons", "datatables/jquery.dataTables.min.js")
 	ui.includeJavascript("settingsapp", "angular.min.js")
+	ui.includeJavascript("settingsapp", "controllers.js")
 %>
 <script type="text/javascript">
     var breadcrumbs = [
@@ -12,4 +13,12 @@
 
 <h3>${ ui.message("settingsapp.manage.label") }</h3>
 
-<p>This is a test</p>
+<div ng-app="settingsApp">
+	<div ng-controller="SettingsAppCtrl">
+		<ul>
+			<li ng-repeat="globalProperty in globalProperties">
+				{{globalProperty.name}} - {{globalProperty.value}}
+			</li>
+		</ul>
+	</div>
+</div>
