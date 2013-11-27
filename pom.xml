@@ -8,7 +8,13 @@
 	<packaging>pom</packaging>
 	<name>Settings App Module</name>
 	<description>Allows to customize system settings</description>
-	<url>https://wiki.openmrs.org/display/docs/Settings+App+Module+Module</url>
+	<url>https://wiki.openmrs.org/display/docs/Settings+App+Module</url>
+	
+	<parent>
+		<groupId>org.openmrs.distro</groupId>
+		<artifactId>referenceapplication</artifactId>
+		<version>2.0.1530</version>
+	</parent>
 	
 	<developers>
 		<developer>
@@ -22,9 +28,9 @@
 	</organization>
 
 	<scm>
-		<connection>scm:svn:https://svn.openmrs.org/openmrs-modules/settingsapp/trunk/</connection>
-		<developerConnection>scm:svn:https://svn.openmrs.org/openmrs-modules/settingsapp/trunk/</developerConnection>
-		<url>https://svn.openmrs.org/openmrs-modules/settingsapp/trunk/</url>
+		<connection>scm:git:https://github.com/rkorytkowski/openmrs-module-settingsapp</connection>
+		<developerConnection>scm:git:https://github.com/rkorytkowski/openmrs-module-settingsapp</developerConnection>
+		<url>https://github.com/rkorytkowski/openmrs-module-settingsapp</url>
 	</scm>
 
 	<modules>
@@ -37,94 +43,6 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
-	<dependencyManagement>
-		<dependencies>
-		
-			<!--
-			Libraries to add as dependencies with compile or runtime scope:
-			Find matching dependencies in the maven central repository.
-			<dependency>
-				<groupId>org.other.library</groupId>
-				<artifactId>library-name</artifactId>
-				<version>library.version</version>
-				<scope>compile</scope>
-			</dependency>
-			-->
-			
-			
-
-			<!-- Begin OpenMRS core -->
-			
-			<dependency>
-				<groupId>org.openmrs.api</groupId>
-				<artifactId>openmrs-api</artifactId>
-				<version>${openMRSVersion}</version>
-				<type>jar</type>
-				<scope>provided</scope>
-			</dependency>
-
-			<dependency>
-				<groupId>org.openmrs.web</groupId>
-				<artifactId>openmrs-web</artifactId>
-				<version>${openMRSVersion}</version>
-				<type>jar</type>
-				<scope>provided</scope>
-			</dependency>
-						
-			<dependency>
-				<groupId>org.openmrs.api</groupId>
-				<artifactId>openmrs-api</artifactId>
-				<version>${openMRSVersion}</version>
-				<type>test-jar</type>
-				<scope>test</scope>
-			</dependency>
-			
-			<dependency>
-				<groupId>org.openmrs.web</groupId>
-				<artifactId>openmrs-web</artifactId>
-				<version>${openMRSVersion}</version>
-				<type>test-jar</type>
-				<scope>test</scope>
-			</dependency>
-			
-			<dependency>
-				<groupId>org.openmrs.test</groupId>
-				<artifactId>openmrs-test</artifactId>
-				<version>${openMRSVersion}</version>
-				<type>pom</type>
-				<scope>test</scope>
-			</dependency>
-						
-			<!-- End OpenMRS core -->
-
-		</dependencies>
-	</dependencyManagement>
-
-	<build>
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-compiler-plugin</artifactId>
-					<configuration>
-						<target>1.6</target>
-						<source>1.6</source>
-					</configuration>
-				</plugin>
-				<plugin>
-					<groupId>org.openmrs.maven.plugins</groupId>
-					<artifactId>maven-openmrs-plugin</artifactId>
-					<version>1.0.1</version>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-dependency-plugin</artifactId>
-					<version>2.4</version>
-				</plugin>
-			</plugins>
-		</pluginManagement>
-	</build>
-
 	<repositories>
 		<repository>
 			<id>openmrs-repo</id>
@@ -132,16 +50,4 @@
 			<url>http://mavenrepo.openmrs.org/nexus/content/repositories/public</url>
 		</repository>
 	</repositories>
-
-	<pluginRepositories>
-		<pluginRepository>
-			<id>openmrs-repo</id>
-			<name>OpenMRS Nexus Repository</name>
-			<url>http://mavenrepo.openmrs.org/nexus/content/repositories/public</url>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</pluginRepository>
-	</pluginRepositories>
-
 </project>
